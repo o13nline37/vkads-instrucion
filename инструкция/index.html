@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инструкция: Подмена кода для скрин-отчёта ВК</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Включить темную тему" aria-pressed="false">
+  <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">☀</span>
+  <span class="theme-toggle-thumb" aria-hidden="true"></span>
+  <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">☾</span>
+</button>
+
+<div class="container">
+
+  <header>
+    <h1>Инструкция по подмене кода для скрин-отчёта</h1>
+    <p>Пошаговое руководство для рекламных объявлений ВКонтакте</p>
+  </header>
+
+  <div class="progress-panel" aria-label="Прогресс прохождения инструкции">
+    <div class="progress-meta">
+      <span class="progress-label" id="progress-label">Шаг 1 из 10</span>
+      <span class="progress-title" id="progress-title">Открываем нужное объявление</span>
+    </div>
+    <div class="progress-track">
+      <div
+        class="progress-bar"
+        id="progress-bar"
+        role="progressbar"
+        aria-valuemin="1"
+        aria-valuemax="10"
+        aria-valuenow="1"
+        aria-valuetext="Шаг 1 из 10"
+      ></div>
+    </div>
+  </div>
+
+  <div class="warning">
+    <strong>⚠️ Важно:</strong> После внесения изменений не обновляйте страницу, иначе все правки сбросятся.
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <h2><span class="step-number">1</span> Открываем нужное объявление</h2>
+    <p>Перейдите в рекламный кабинет и выберите нужное рекламное объявление, которое будете использовать как основу для замены.</p>
+    <div class="screenshot">
+      <img src="1.png" alt="Рекламное объявление из кабинета">
+      <div class="screenshot-caption">Рис. 1. Рекламное объявление, скрин которого нам нужен</div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <h2><span class="step-number">2</span> Копируем нужные URL</h2>
+    <p>На странице с исходным объявлением (откуда берём лого и креатив):</p>
+    <ul>
+      <li>Правой кнопкой по <strong>логотипу</strong> → «Копировать URL изображения»</li>
+      <li>Правой кнопкой по <strong>креативу</strong> → «Копировать URL изображения»</li>
+    </ul>
+    <div class="screenshot">
+      <img src="2.png" alt="Исходное объявление ЛЕГЕНДА">
+      <div class="screenshot-caption">Рис. 2. Пример объявления, откуда копируем изображения</div>
+    </div>
+    <div class="note">Сохраните скопированные ссылки — они понадобятся на шаге 4.</div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <h2><span class="step-number">3</span> Открываем код страницы</h2>
+    <p>На странице с выбранным объявлением ВКонтакте (не Яндекс) нажмите <span class="kbd">F12</span>. Откроется панель разработчика.</p>
+    <div class="screenshot">
+      <img src="3.png" alt="Рекламное объявление из ленты">
+      <div class="screenshot-caption">Рис. 3. Рекламное объявление для редактирования</div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <h2><span class="step-number">4</span> Заменяем логотип и креатив</h2>
+    <p>Правой кнопкой по иконке объявления → «Просмотреть код». В открывшемся HTML найдите атрибут <code>src="..."</code> и замените на скопированный ранее URL.</p>
+    <div class="code-block">&lt;img src="https://ваш-новый-url.png"&gt;</div>
+    <p>То же самое проделайте с креативом.</p>
+    <div class="note">
+      <strong>💡 Подсказка:</strong> Если нажать кнопку «Просмотреть код» — вас автоматически перебросит в нужный блок кода, где можно внести изменения.
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <h2><span class="step-number">5</span> Проверяем результат</h2>
+    <p>Если всё сделали правильно, должны увидеть лого и крео в данном рекламном объявлении, но с чужим текстом.</p>
+    <div class="screenshot">
+      <img src="5.png" alt="Лента ВК с рекламными объявлениями">
+      <div class="screenshot-caption">Рис. 4. Лента ВКонтакте с рекламными объявлениями</div>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <h2><span class="step-number">6</span> Меняем текст</h2>
+    <ul>
+      <li>Правой кнопкой по <strong>заголовку</strong> → «Просмотреть код» → заменить текст</li>
+      <li>То же самое с <strong>описанием</strong></li>
+      <li>То же самое с <strong>текстом кнопки</strong></li>
+    </ul>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step">
+    <h2><span class="step-number">7</span> Если текст кнопки не отображается</h2>
+    <p>Иногда при «Просмотреть код» на кнопке текст не виден для редактирования.</p>
+    <div class="note">
+      <strong>Решение:</strong> необходимо кликнуть (прожать) саму кнопку в выделенном коде — после этого текст станет доступен.
+    </div>
+    <div class="screenshot">
+      <img src="8.png" alt="Сервис get-color.ru">
+      <div class="screenshot-caption">Рис. 5. Сервис для подбора цвета из изображения</div>
+    </div>
+  </div>
+
+  <!-- STEP 8 -->
+  <div class="step">
+    <h2><span class="step-number">8</span> Подбираем цвет кнопки под креатив</h2>
+    <p>Если не устраивает цвет кнопки — не проблема! Идём по ссылке:</p>
+    <ul>
+      <li>Перейдите: <a href="https://get-color.ru/image/" class="link" target="_blank">get-color.ru/image/</a></li>
+      <li>Вставьте URL нужного нам креатива в поле для ввода</li>
+      <li>Нажмите «Загрузить»</li>
+    </ul>
+    <p>Сервис покажет доминирующие цвета изображения. Примеры:</p>
+    <div class="colors">
+      <div class="color-box color-green">#52F915</div>
+      <div class="color-box color-gray-green">#596B65</div>
+      <div class="color-box color-brown-gray">#94827B</div>
+    </div>
+    <div class="screenshot">
+      <img src="10.png" alt="HTML код кнопки">
+      <div class="screenshot-caption">Рис. 6. Поиск параметров цвета в коде кнопки</div>
+    </div>
+    <div class="screenshot">
+      <img src="11.png" alt="Замена цвета кнопки">
+      <div class="screenshot-caption">Рис. 7. Замена значений цвета</div>
+    </div>
+  </div>
+
+  <!-- STEP 9 -->
+  <div class="step">
+    <h2><span class="step-number">9</span> Заменяем цвет кнопки в коде</h2>
+    <p>Получаем нужный нам код кнопки. Идём в код кнопки, находим там <code>BORDER-COLOR</code> и <code>BACKGROUND-COLOR</code> и заменяем значения на нужные.</p>
+    <div class="code-block">border-color: rgb(82, 249, 21);
+background-color: rgb(82, 249, 21);</div>
+    <div class="note">Можно использовать как <code>rgb(R, G, B)</code>, так и HEX-код <code>#52F915</code>.</div>
+    <div class="screenshot">
+      <img src="12.png" alt="Код для замены">
+      <div class="screenshot-caption">Рис. 8. Код, который нужно заменить</div>
+    </div>
+  </div>
+
+  <!-- STEP 10 -->
+  <div class="step">
+    <h2><span class="step-number">10</span> Финал</h2>
+    <p>Жмём <span class="kbd">F12</span> (закрыть код) и получаем нужное нам объявление в ленте!</p>
+    <div class="screenshot">
+      <img src="13.png" alt="Готовое объявление">
+      <div class="screenshot-caption">Рис. 9. Готовое объявление со всеми изменениями</div>
+    </div>
+    <div class="danger">
+      <strong>🚨 ВАЖНО:</strong> Ни в коем случае не обновляем страницу, иначе всё сбросится!
+    </div>
+  </div>
+
+</div>
+
+<div class="image-modal" id="image-modal" aria-hidden="true">
+  <button class="image-modal-close" type="button" aria-label="Закрыть изображение">×</button>
+  <figure class="image-modal-content">
+    <img class="image-modal-img" src="" alt="">
+    <figcaption class="image-modal-caption"></figcaption>
+  </figure>
+</div>
+</body>
+</html>
